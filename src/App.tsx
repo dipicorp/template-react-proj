@@ -7,7 +7,6 @@ import LocalStorage from './helper/local-storage';
 import { RequireLogined } from './middleware/require-logined';
 import About from './pages/about/about';
 import { Homepage } from './pages/homepage/homepage';
-import Login from './pages/login/login';
 import { NotFound } from './pages/not-found/not-found';
 import Signup from './pages/signup/signup';
 import Tailwind from './pages/tailwind/tailwind';
@@ -47,23 +46,10 @@ const App = () => {
 
   return <>
     <Nav />
-    {/* {
-      transition.map((val) => (
-        <animated.div key={val.key} style={val.props}>
-          <Switch location={val.item}>
-            <Route exact path="/" component={Homepage} />
-            <Route exact path="/about" component={About} />
-            <Route path="/callback-recoil" component={CallBackRecoil} />
-            <Route component={NotFound} />
-          </Switch>
-        </animated.div>
-      ))
-    } */}
     <Switch>
       <Route exact path="/" component={Homepage} />
       <Route exact path="/about" component={About} />
       <Route exact path="/callback-recoil" component={RequireLogined(CallBackRecoil)} />
-      <Route exact path="/login" component={Login} />
       <Route exact path="/sign-up" component={Signup} />
       <Route exact path="/tailwind" component={Tailwind} />
       <Route component={NotFound} />

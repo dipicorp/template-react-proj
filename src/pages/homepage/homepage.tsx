@@ -6,7 +6,7 @@ import Modal from '../../components/modal/modal'
 import { useFetch } from '../../hooks/use-fetch'
 import { useScrollPosition } from '../../hooks/use-scroll-position'
 import { countState } from '../../state/user-state'
-import style from './homepage.module.scss'
+// import style from './homepage.module.scss'
 
 export const Homepage = React.memo(() => {
 
@@ -27,7 +27,7 @@ export const Homepage = React.memo(() => {
 
   const { x, y } = useScrollPosition(150)
 
-  return <FullWidthLayout id={style.homepage} title="Homepage">
+  return <FullWidthLayout id="homepage" title="Homepage">
     <div>{loading ? "Loading" : "Done"} {JSON.stringify(data)} {errMsg}</div>
     <button onClick={setModal_Op}>Show modal</button>
     <h1>Hello world</h1>

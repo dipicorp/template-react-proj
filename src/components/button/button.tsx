@@ -1,7 +1,7 @@
 import React from 'react'
 import { BasePropsComponent } from '../../helper/base-props'
 import { combineCN } from '../../helper/combine-classname'
-import style from './button.module.scss'
+// import style from './button.module.scss'
 interface Props extends BasePropsComponent {
   onClick?: () => void
   title?: string
@@ -12,8 +12,8 @@ const Button: React.FC<Props> = React.memo((props) => {
 
   return <button
     className={
-      combineCN(props.className, style.button,
-        "bg-gray-500 rounded-full text-white hover:bg-gray-400")
+      combineCN(props.className,
+        "bg-gray-500 rounded-full text-white hover:bg-gray-400 p-1")
     }
     onClick={props.onClick}
     style={props.style}>
