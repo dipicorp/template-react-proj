@@ -30,7 +30,7 @@ export const Homepage = React.memo(() => {
   return <FullWidthLayout id="homepage" title="Homepage">
     <div>{loading ? "Loading" : "Done"} {JSON.stringify(data)} {errMsg}</div>
     <button onClick={setModal_Op}>Show modal</button>
-    <h1>Hello world</h1>
+    <h1 className="bg-purple-300">Hello world</h1>
     <div>{x} {y}</div>
     <Button onClick={setCount_Op}>
       Ahihi
@@ -65,7 +65,7 @@ export const Homepage = React.memo(() => {
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero blanditiis inventore labore?</p>
         <button onClick={setModal_Op}>
           Close
-         </button>
+        </button>
       </div>
     </Modal>
   </FullWidthLayout >
