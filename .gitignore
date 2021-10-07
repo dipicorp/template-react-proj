@@ -25,4 +25,4 @@ yarn-error.log*
 
 #cache
 .eslintcache
-src/tailwind.output.css
+./src/tailwind.output.css
