@@ -15,15 +15,12 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     "isolatedModules": true
   },
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx"
-  ],
+  "include": ["./src"],
   "exclude": [
     "./node_modules"
   ]
