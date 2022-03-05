@@ -17,14 +17,6 @@ const App = () => {
 
   let setTheme = useSetRecoilState(themeState)
   let setCart = useSetRecoilState(cartState)
-  // let location = useLocation()
-  // console.log(location)
-  // const transition = useTransition(location, location => location.pathname, {
-  //   from: { opacity: 0 },
-  //   enter: { opacity: 1 },
-  //   leave: { display: 'none' },
-  //   config: { duration: 500 }
-  // })
 
   useEffect(() => {
     let curTheme = LocalStorage.get<Theme>("theme");
@@ -41,7 +33,6 @@ const App = () => {
       LocalStorage.set("cart", [])
     }
     setCart(curCart)
-
   }, [setTheme, setCart])
 
   return <>

@@ -1,9 +1,8 @@
 module.exports = {
   darkMode: 'media',
-  purge: {
-    enabled: process.env.NODE_ENV == "production",
-    content: ['./src/**/*.tsx', './public/index.html']
-  },
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extends: {}
   },
