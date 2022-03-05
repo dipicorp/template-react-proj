@@ -1,3 +1,4 @@
+import React from 'react';
 import ArticleLayout from '../../components/layout/article-layout/article-layout';
 // import style from './not-found.module.scss';
 

@@ -3,7 +3,7 @@ Work with Visual Studio Code
 
 ## Technology used
 - Using [`vite`](https://vitejs.dev) for extremely fast refresh
-- Latest [React (17.x)](https://reactjs.org) + TypeScript
+- Latest [React (18.rc1)](https://reactjs.org) + TypeScript
 - [Recoil (Experimental)](https://recoiljs.org) state management
 - [TailwindCSS](https://tailwindcss.com) and/or SCSS module
 - [Framer motion](https://www.framer.com/motion/) for React animation
