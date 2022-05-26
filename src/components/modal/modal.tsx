@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import React from 'react'
-import { BasePropsComponent } from '../../helper/base-props'
-import { combineCN } from '../../helper/combine-classname'
+import { BasePropsComponent } from '../../submodules/props/base-props'
+import { combineCN } from '../../submodules/string-processing/combine-classname'
 
 interface Props extends BasePropsComponent {
   isShowing: boolean,

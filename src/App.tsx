@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import Footer from './components/footer/footer';
 import Nav from './components/nav/nav';
-import LocalStorage from './helper/local-storage';
+import LocalStorage from './submodules/localstorage/local-storage';
 import { RequireLogined } from './middleware/require-logined';
 import About from './pages/about/about';
 import { Homepage } from './pages/homepage/homepage';

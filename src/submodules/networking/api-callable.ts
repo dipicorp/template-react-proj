@@ -4,7 +4,7 @@ export const jsonFetch = async <T extends unknown>(
   method: APIMethod,
   data: any,
   header: Record<string, string> | undefined = {}
-): Promise<T> | undefined => {
+): Promise<T | null> => {
   let trueUrl = url + ((method === "GET" && data != undefined && data != null) ?
     `?${new URLSearchParams(data).toString()}` :
     '')
@@ -19,6 +19,7 @@ export const jsonFetch = async <T extends unknown>(
       "Connection": "keep-alive",
       ...header
     },
+    mode: "cors",
     body: method !== "GET" ? JSON.stringify(data) : undefined,
     credentials: 'same-origin'
   })

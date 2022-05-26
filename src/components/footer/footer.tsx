@@ -1,6 +1,6 @@
 import React from 'react'
-import { BasePropsComponent } from '../../helper/base-props'
-import { combineCN } from '../../helper/combine-classname'
+import { BasePropsComponent } from '../../submodules/props/base-props'
+import { combineCN } from '../../submodules/string-processing/combine-classname'
 import { footerHeight } from '../../variable.css'
 // import style from './footer.module.scss'
 

@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react'
 import { useSetRecoilState } from 'recoil'
 import Button from '../../components/button/button'
 import FullWidthLayout from '../../components/layout/fullwidth-layout/fullwidth-layout'
-import { BasePropsPage } from '../../helper/base-props'
+import { BasePropsPage } from '../../submodules/props/base-props'
 import { countState } from '../../state/user-state'
 // import style from './callback-recoil.module.scss'
 

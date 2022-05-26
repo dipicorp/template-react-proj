@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { APIMethod, jsonFetch } from "../networking/api-callable"
+import { APIMethod, jsonFetch } from "./api-callable"
 export class APIUrl {
   static baseUrl = "https://google.com"
   static withPath(path: string): string {
@@ -45,6 +45,6 @@ export const useFetch = <T extends unknown>(
           })
         }
       })
-  }, [data, method, pathUrl])
+  }, [method, pathUrl, JSON.stringify(data)])
   return state
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BasePropsComponent } from '../../../helper/base-props'
+import { BasePropsComponent } from '../../../submodules/props/base-props'
 
 interface Props extends BasePropsComponent {
   data?: { id: number, name: string, shortMsg: string, isChosen: boolean }[]
