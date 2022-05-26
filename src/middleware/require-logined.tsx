@@ -1,10 +1,10 @@
 
-import React, { useEffect } from 'react'
-import { Redirect, useHistory } from 'react-router-dom'
+import React from 'react'
+import { Navigate } from 'react-router-dom'
 import { useRecoilValue } from 'recoil'
 // import { Route } from 'react-router-dom'
 import LocalStotage from '../submodules/localstorage/local-storage'
-import { themeState, userInfoState } from '../state/user-state'
+import { userInfoState } from '../state/user-state'
 
 export const RequireLogined = <P extends object>(Component: React.FC<P>): React.FC<P> => {
   let token = LocalStotage.get("token")
@@ -12,6 +12,6 @@ export const RequireLogined = <P extends object>(Component: React.FC<P>): React.
   console.log("Loggg")
 
   return (props) => {
-    return token ? <Component {...props} /> : <Redirect to="/" />
+    return token ? <Component {...props} /> : <Navigate to="/" />
   }
 }
