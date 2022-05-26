@@ -2,7 +2,7 @@
 Work with Visual Studio Code
 
 ## Technology used
-- Using [`vite`](https://vitejs.dev) for extremely fast refresh
+- Using [`vite`](https://vitejs.dev) for blazing fast refresh
 - Latest [React (18.rc1)](https://reactjs.org) + TypeScript
 - [Recoil (Experimental)](https://recoiljs.org) state management
 - [TailwindCSS](https://tailwindcss.com) and/or SCSS module
