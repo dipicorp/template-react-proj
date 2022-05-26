@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import Footer from './components/footer/footer';
 import Nav from './components/nav/nav';
@@ -37,14 +37,14 @@ const App = () => {
 
   return <>
     <Nav />
-    <Switch>
-      <Route exact path="/" component={Homepage} />
-      <Route exact path="/about" component={About} />
-      <Route exact path="/callback-recoil" component={RequireLogined(CallBackRecoil)} />
-      <Route exact path="/sign-up" component={Signup} />
-      <Route exact path="/tailwind" component={Tailwind} />
-      <Route component={NotFound} />
-    </Switch>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/callback-recoil" element={RequireLogined(CallBackRecoil)} />
+      <Route path="/sign-up" element={<Signup />} />
+      <Route path="/tailwind" element={<Tailwind />} />
+      <Route element={<NotFound />} />
+    </Routes>
     <Footer />
   </>
 }
