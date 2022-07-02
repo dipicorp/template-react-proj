@@ -23,7 +23,7 @@ export const Homepage = React.memo(() => {
     arrNumber.map(val => { return { val: val, selected: false } })
   )
 
-  let { loading, data, errMsg } = useFetch("https://jsonplaceholder.typicode.com/todos/1", "GET")
+  let { loading, data, errMsg } = useFetch({ fullUrl: "https://jsonplaceholder.typicode.com/todos/1", method: "GET" })
 
   const { x, y } = useScrollPosition(150)
 
@@ -52,7 +52,7 @@ export const Homepage = React.memo(() => {
               })
             }}
           >
-            {val.val} - {val.selected ? "Tickedd" : ""}
+            {val.val} - {val.selected ? "Ticked" : ""}
           </div>
         })
       }

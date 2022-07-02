@@ -18,7 +18,7 @@ const FullWidthLayout: React.FC<Props> = React.memo((props) => {
     style={{ ...props.style, minHeight: `calc(100vh - ${navHeight} - ${footerHeight})` }}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
-    transition={{ duration: 0.2 }}
+    transition={{ duration: 0.03 }}
   >
     <Helmet>
       <title>{props.title ?? "Page"} - {siteInfo.title}</title>

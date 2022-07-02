@@ -27,7 +27,7 @@ const ArticleLayout: React.FC<Props> = React.memo((props) => {
       style={{ minHeight: `calc(100vh - ${navHeight} - ${footerHeight})`, maxWidth: 900 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.2 }}
+      transition={{ duration: 0.03 }}
     >
       {props.children}
     </motion.main>

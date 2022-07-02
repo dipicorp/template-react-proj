@@ -8,20 +8,31 @@ export class APIUrl {
     return this.baseUrl + (path[0] === "/" ? "" : "/") + path
   }
 }
+
+export interface FetchParam {
+  fullUrl?: string
+  pathUrl?: string
+  method: APIMethod
+  data?: any
+  header?: Map<string, any>
+}
+
 export const useFetch = <T extends unknown>(
-  fullUrl?: string,
-  pathUrl?: string, method: APIMethod, data: any = undefined,
+  param: FetchParam
 ) => {
   interface ResultType {
     loading: boolean,
-    data: T,
-    errMsg: string
+    data: T | null,
+    errMsg: string | null
   }
+  const { fullUrl, pathUrl, method, data, header } = param
   let isCurrent = useRef(true)
   let [state, setState] = useState<ResultType>({ loading: true, data: null, errMsg: null })
 
-  if (fullUrl == null && pathUrl == null) {
+  if (fullUrl == undefined && pathUrl == undefined) {
     setState({
+      loading: false,
+      data: null,
       errMsg: "Url is missing, try implement fullUrl or pathUrl"
     });
   }
@@ -33,7 +44,7 @@ export const useFetch = <T extends unknown>(
   }, [])
 
   useEffect(() => {
-    const _fullUrl = fullUrl ?? APIUrl.withPath(pathUrl)
+    const _fullUrl = fullUrl ?? APIUrl.withPath(pathUrl!)
     jsonFetch<T>(_fullUrl, method, data)
       .then(json => {
         if (isCurrent.current) {
