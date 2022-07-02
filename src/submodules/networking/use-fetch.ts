@@ -9,7 +9,8 @@ export class APIUrl {
   }
 }
 export const useFetch = <T extends unknown>(
-  pathUrl: string, method: APIMethod, data: any = undefined,
+  fullUrl?: string,
+  pathUrl?: string, method: APIMethod, data: any = undefined,
 ) => {
   interface ResultType {
     loading: boolean,
@@ -19,6 +20,12 @@ export const useFetch = <T extends unknown>(
   let isCurrent = useRef(true)
   let [state, setState] = useState<ResultType>({ loading: true, data: null, errMsg: null })
 
+  if (fullUrl == null && pathUrl == null) {
+    setState({
+      errMsg: "Url is missing, try implement fullUrl or pathUrl"
+    });
+  }
+
   useEffect(() => {
     return () => {
       isCurrent.current = false
@@ -26,7 +33,8 @@ export const useFetch = <T extends unknown>(
   }, [])
 
   useEffect(() => {
-    jsonFetch<T>(APIUrl.withPath(pathUrl), method, data)
+    const _fullUrl = fullUrl ?? APIUrl.withPath(pathUrl)
+    jsonFetch<T>(_fullUrl, method, data)
       .then(json => {
         if (isCurrent.current) {
           setState({
