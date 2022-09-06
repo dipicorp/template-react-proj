@@ -40,7 +40,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/about" element={<About />} />
-      <Route path="/callback-recoil" element={RequireLogined(CallBackRecoil)} />
+      <Route path="/callback-recoil" element={RequireLogined(CallBackRecoil) as any} />
       <Route path="/sign-up" element={<Signup />} />
       <Route path="/tailwind" element={<Tailwind />} />
       <Route element={<NotFound />} />

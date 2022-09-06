@@ -11,7 +11,7 @@ const ListThumbnail: React.FC<Props> = React.memo((props) => {
     {
       props.data?.map(val => {
         return <li
-          onClick={() => props.handleClick(val.id)}
+          onClick={() => props.handleClick?.call(val.id)}
           key={val.id}
           className={`hover:bg-gray-600 hover:text-white ${val.isChosen ? 'bg-pink-400' : ''}`}>
           <div className="p-2">
